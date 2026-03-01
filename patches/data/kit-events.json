@@ -1,0 +1,835 @@
+{
+  "kit-party-add": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 3500",
+    "eventType": "CUTSCENE",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_CONTACT_TYPE",
+        "member": "Kit",
+        "status": "FRIEND"
+      },
+      {
+        "withElse": true,
+        "type": "IF",
+        "condition": "player.level <= 75",
+        "thenStep": [
+          {
+            "type": "SET_PARTY_MEMBER_LEVEL_VAR",
+            "member": "Kit",
+            "level": {
+              "varName": "player.level"
+            },
+            "updateEquipment": true
+          }
+        ],
+        "elseStep": [
+          {
+            "type": "SET_PARTY_MEMBER_LEVEL",
+            "member": "Kit",
+            "level": 75,
+            "updateEquipment": true
+          }
+        ]
+      },
+      {
+        "withElse": true,
+        "type": "IF",
+        "condition": "plot.line >= 44650",
+        "thenStep": [
+          {
+            "type": "SET_PARTY_MEMBER_SP_LEVEL",
+            "member": "Kit",
+            "level": 4
+          }
+        ],
+        "elseStep": [
+          {
+            "withElse": true,
+            "type": "IF",
+            "condition": "plot.line >= 18650",
+            "thenStep": [
+              {
+                "type": "SET_PARTY_MEMBER_SP_LEVEL",
+                "member": "Kit",
+                "level": 3
+              }
+            ],
+            "elseStep": [
+              {
+                "withElse": true,
+                "type": "IF",
+                "condition": "plot.line >= 6600",
+                "thenStep": [
+                  {
+                    "type": "SET_PARTY_MEMBER_SP_LEVEL",
+                    "member": "Kit",
+                    "level": 2
+                  }
+                ],
+                "elseStep": [
+                  {
+                    "type": "SET_PARTY_MEMBER_SP_LEVEL",
+                    "member": "Kit",
+                    "level": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SET_PARTY_MEMBER_ALL_ELEMENTS",
+        "member": "Kit",
+        "allElements": false
+      },
+      {
+        "type": "SHOW_GET_MSG",
+        "msgType": "PARTY",
+        "object": {
+          "en_US": "Kit"
+        }
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-join": {
+    "frequency": "ALWAYS",
+    "repeat": "REPEAT",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "outgoing": true,
+        "type": "RING_PRIVATE_MSG"
+      },
+      {
+        "type": "START_PRIVATE_MSG"
+      },
+      {
+        "side": "LEFT",
+        "order": 0,
+        "clearSide": false,
+        "type": "ADD_MSG_PERSON",
+        "person": {
+          "person": "guests.kit",
+          "expression": "DEFAULT"
+        }
+      },
+      {
+        "side": "RIGHT",
+        "order": 0,
+        "clearSide": false,
+        "type": "ADD_MSG_PERSON",
+        "person": {
+          "person": "main.lea",
+          "expression": "DEFAULT"
+        }
+      },
+      {
+        "type": "SELECT_RANDOM",
+        "options": [
+          {
+            "0": " ",
+            "count": 3,
+            "weight": 1
+          }
+        ],
+        "0_0": [
+          {
+            "message": {
+              "en_US": "Boy oh boy, let's go!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          }
+        ],
+        "0_1": [
+          {
+            "message": {
+              "en_US": "Want to find new exploits together? On my way!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          }
+        ],
+        "0_2": [
+          {
+            "message": {
+              "en_US": "Haha, ready for some more hijinks?"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          }
+        ]
+      },
+      {
+        "name": "end",
+        "type": "LABEL"
+      },
+      {
+        "member": "Kit",
+        "skipEffect": false,
+        "temporary": false,
+        "type": "ADD_PARTY_MEMBER"
+      },
+      {
+        "skipSounds": false,
+        "type": "END_PRIVATE_MSG"
+      }
+    ],
+    "loopCount": 1,
+    "type": {
+      "member": "Kit",
+      "actionType": "PARTY_JOIN",
+      "type": "SOCIAL_ACTION"
+    }
+  },
+  "kit-remove": {
+    "frequency": "ALWAYS",
+    "repeat": "REPEAT",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "outgoing": true,
+        "type": "RING_PRIVATE_MSG"
+      },
+      {
+        "type": "START_PRIVATE_MSG"
+      },
+      {
+        "side": "LEFT",
+        "order": 0,
+        "clearSide": false,
+        "type": "ADD_MSG_PERSON",
+        "person": {
+          "person": "guests.kit",
+          "expression": "DEFAULT"
+        }
+      },
+      {
+        "side": "RIGHT",
+        "order": 0,
+        "clearSide": false,
+        "type": "ADD_MSG_PERSON",
+        "person": {
+          "person": "main.lea",
+          "expression": "DEFAULT"
+        }
+      },
+      {
+        "type": "SELECT_RANDOM",
+        "options": [
+          {
+            "0": " ",
+            "count": 3,
+            "weight": 1
+          }
+        ],
+        "0_0": [
+          {
+            "message": {
+              "en_US": "Until next time, Lea!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          }
+        ],
+        "0_1": [
+          {
+            "message": {
+              "en_US": "I'll resume glitch hunting then, take care!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          }
+        ],
+        "0_2": [
+          {
+            "message": {
+              "en_US": "See you! Let me know if you find any cool glitches!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          }
+        ]
+      },
+      {
+        "member": "Kit",
+        "skipEffect": false,
+        "type": "REMOVE_PARTY_MEMBER"
+      },
+      {
+        "skipSounds": false,
+        "type": "END_PRIVATE_MSG"
+      }
+    ],
+    "loopCount": 1,
+    "type": {
+      "member": "Kit",
+      "actionType": "PARTY_LEAVE",
+      "type": "SOCIAL_ACTION"
+    }
+  },
+  "kit-contact": {
+    "frequency": "ALWAYS",
+    "repeat": "REPEAT",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "outgoing": true,
+        "type": "RING_PRIVATE_MSG"
+      },
+      {
+        "type": "START_PRIVATE_MSG"
+      },
+      {
+        "side": "RIGHT",
+        "order": 1,
+        "clearSide": false,
+        "type": "ADD_MSG_PERSON",
+        "person": {
+          "person": "main.lea",
+          "expression": "DEFAULT"
+        }
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "party.has.Kit && !location.isMapDungeon",
+        "thenStep": [
+          {
+            "message": {
+              "en_US": "Hi?"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "main.lea",
+              "expression": "SURPRISED_TOWARD"
+            }
+          },
+          {
+            "side": "RIGHT",
+            "order": 0,
+            "clearSide": false,
+            "type": "ADD_MSG_PERSON",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          },
+          {
+            "message": {
+              "en_US": "I'm right here, Lea! Why are you calling?"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          },
+          {
+            "message": {
+              "en_US": "..!"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "main.lea",
+              "expression": "SHOCKED"
+            }
+          },
+          {
+            "type": "SET_MSG_EXPRESSION",
+            "person": {
+              "person": "main.lea",
+              "expression": "SURPRISED_AWAY"
+            }
+          },
+          {
+            "message": {
+              "en_US": "Unless I'm glitched out and you can't see me?"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          },
+          {
+            "person": "guests.kit",
+            "type": "REMOVE_MSG_PERSON"
+          },
+          {
+            "message": {
+              "en_US": "..."
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "main.lea",
+              "expression": "ANNOYED"
+            }
+          },
+          {
+            "name": "end",
+            "type": "GOTO_LABEL"
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "party.has.Kit && location.isMapDungeon",
+        "thenStep": [
+          {
+            "side": "LEFT",
+            "order": 0,
+            "clearSide": false,
+            "type": "ADD_MSG_PERSON",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          },
+          {
+            "message": {
+              "en_US": "This dungeon is quite foolproof! There aren't many \\c[3]JADC\\c[0] skips I can find..."
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            }
+          },
+          {
+            "message": {
+              "en_US": "..."
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "main.lea",
+              "expression": "SMILE"
+            }
+          },
+          {
+            "name": "end",
+            "type": "GOTO_LABEL"
+          }
+        ]
+      },
+      {
+        "side": "LEFT",
+        "order": 0,
+        "clearSide": false,
+        "type": "ADD_MSG_PERSON",
+        "person": {
+          "person": "guests.kit",
+          "expression": "DEFAULT"
+        }
+      },
+      {
+        "message": {
+          "en_US": "Hi!"
+        },
+        "autoContinue": false,
+        "type": "SHOW_MSG",
+        "person": {
+          "person": "main.lea",
+          "expression": "EXCITED"
+        }
+      },
+      {
+        "message": {
+          "en_US": "Oh hey again, Lea!"
+        },
+        "autoContinue": false,
+        "type": "SHOW_MSG",
+        "person": {
+          "person": "guests.kit",
+          "expression": "DEFAULT"
+        }
+      },
+      {
+        "0": [
+          {
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            },
+            "message": {
+              "en_US": "Want me to join as a \\c[3]fourth\\c[0] party member? There are certain...\\!methods\\! to do that."
+            },
+            "type": "SHOW_MSG"
+          }
+        ],
+        "1": [
+          {
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            },
+            "message": {
+              "en_US": "Haha, your party size is glitching the GUI. I should join to make it even bigger!"
+            },
+            "type": "SHOW_MSG"
+          }
+        ],
+        "2": [
+          {
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            },
+            "message": {
+              "en_US": "Oh boy! Do you want to form a party again?"
+            },
+            "type": "SHOW_MSG"
+          }
+        ],
+        "type": "SELECT_FIRST",
+        "options": [
+          "party.size == 3",
+          "party.size > 3",
+          "party.size < 3"
+        ]
+      },
+      {
+        "0": [
+          {
+            "message": {
+              "en_US": "[nods]"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "main.lea",
+              "expression": "NOD"
+            }
+          },
+          {
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            },
+            "message": {
+              "en_US": "On my way!"
+            },
+            "type": "SHOW_MSG"
+          },
+          {
+            "type": "ADD_PARTY_MEMBER",
+            "member": "Kit",
+            "skipEffect": false,
+            "temporary": false
+          }
+        ],
+        "1": [
+          {
+            "message": {
+              "en_US": "[shakes head]"
+            },
+            "autoContinue": false,
+            "type": "SHOW_MSG",
+            "person": {
+              "person": "main.lea",
+              "expression": "SHAKE"
+            }
+          },
+          {
+            "person": {
+              "person": "guests.kit",
+              "expression": "DEFAULT"
+            },
+            "message": {
+              "en_US": "Ok, keep an eye out for cool glitches though!"
+            },
+            "type": "SHOW_MSG"
+          }
+        ],
+        "type": "SHOW_CHOICE",
+        "person": {
+          "person": "main.lea",
+          "expression": "DEFAULT"
+        },
+        "options": [
+          {
+            "0": " ",
+            "label": {
+              "en_US": "[yes]"
+            }
+          },
+          {
+            "1": " ",
+            "label": {
+              "en_US": "[no]"
+            }
+          }
+        ]
+      },
+      {
+        "name": "end",
+        "type": "LABEL"
+      },
+      {
+        "skipSounds": false,
+        "type": "END_PRIVATE_MSG"
+      }
+    ],
+    "loopCount": 1,
+    "type": {
+      "member": "Kit",
+      "actionType": "CONTACT",
+      "type": "SOCIAL_ACTION"
+    }
+  },
+  "kit-SP-2": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 6600 && plot.line < 18650",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_SP_LEVEL",
+        "member": "Kit",
+        "level": 2
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-SP-3": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 18650 && plot.line < 44650",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_SP_LEVEL",
+        "member": "Kit",
+        "level": 3
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-SP-4": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 44650",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_SP_LEVEL",
+        "member": "Kit",
+        "level": 4
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-22": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 4310 && plot.line < 6900",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 22,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-33": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 6900 && plot.line < 17200",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 33,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-40": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 17200 && plot.line < 18000",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 40,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-43": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 18000 && plot.line < 18800",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 43,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-47": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 18800 && plot.line < 21300",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 47,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-53": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 21300 && plot.line < 25400",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 53,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-57": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 25400 && plot.line < 40100",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 57,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-63": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 40100 && plot.line < 46000",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 63,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  },
+  "kit-lv-69": {
+    "frequency": "ALWAYS",
+    "repeat": "ONCE",
+    "condition": "plot.line >= 46000 && plot.line < 48000",
+    "eventType": "PARALLEL",
+    "overrideSideMessage": false,
+    "event": [
+      {
+        "type": "SET_PARTY_MEMBER_LEVEL",
+        "member": "Kit",
+        "level": 69,
+        "updateEquipment": true
+      }
+    ],
+    "type": {
+      "type": "MAP_ENTERED"
+    }
+  }
+}

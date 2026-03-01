@@ -1,0 +1,18 @@
+[
+  {
+    "type": "ENTER",
+    "index": "name"
+  },
+  {
+    "type": "SET_KEY",
+    "index": "en_US",
+    "content": "Kit"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "INCLUDE",
+    "src": "mod:patches/data/characters/guests/kit.json"
+  }
+]

@@ -1,0 +1,32 @@
+{
+	"id": "kit-mod",
+	"version": "1.0.0",
+	"title": {
+		"en_US": "Kit Mod",
+		"de_DE": "Kit Mod",
+		"fr_FR": "Kit Mod",
+		"zh_CN": "Kit Mod",
+		"zh_TW": "Kit Mod",
+		"ja_JP": "Kit Mod",
+		"ko_KR": "Kit Mod"
+	},
+	"description": {
+		"en_US": "Adds Kit as a party member and playable character.",
+		"de_DE": "Adds Kit as a party member and playable character.",
+		"fr_FR": "Adds Kit as a party member and playable character.",
+		"zh_CN": "Adds Kit as a party member and playable character.",
+		"zh_TW": "Adds Kit as a party member and playable character.",
+		"ja_JP": "Adds Kit as a party member and playable character.",
+		"ko_KR": "Adds Kit as a party member and playable character."
+	},
+	"icons": {
+		"24": "icon.png"
+	},
+	"repository": "https://github.com/XenonA7/xenons-playable-classes",
+	"tags": ["party member", "player character"],
+	"authors": ["BountyXSnipe", "dmitmel", "XenonA7"],
+	"prestart": "prestart.js",
+	"dependencies": {
+		"extendable-severed-heads": ">=1.1.0"
+	}
+}
