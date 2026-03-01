@@ -1,7 +1,7 @@
-# Kit Party Member
+# Kit Mod
 Adds Kit as a party member who automatically joins after the first Apollo duel in Bergen Trail (you don't unlock the party menu until this point in the game). Kit does not have banter dialogue or story cutscene support, but will level-scale properly and is usable all the way to the end of the DLC.
 
-If you have the **char-select** mod installed, you can also play the game as Kit. There are supported Kit animations for player-only actions such as level-up and pushing boxes.
+If you have the **char-select** mod installed, Kit is also a playable character. There are supported Kit animations for player-only actions such as level-up and pushing boxes.
 Get this mod from the in-game mod browser.
 https://github.com/CCDirectLink/char-select
 
