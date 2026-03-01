@@ -1,6 +1,6 @@
 {
 	"id": "kit-mod",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"title": {
 		"en_US": "Kit Mod",
 		"de_DE": "Kit Mod",
@@ -22,7 +22,7 @@
 	"icons": {
 		"24": "icon.png"
 	},
-	"repository": "https://github.com/XenonA7/xenons-playable-classes",
+	"repository": "https://github.com/XenonA7/kit-mod",
 	"tags": ["party member", "player character"],
 	"authors": ["BountyXSnipe", "dmitmel", "XenonA7"],
 	"prestart": "prestart.js",
