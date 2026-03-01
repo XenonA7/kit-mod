@@ -9,17 +9,16 @@ If you have the **cc-combat-art-level-extender** mod installed, Kit will use the
 This mod is not on in the in-game mod browser.
 https://github.com/CCDirectLink/cc-combat-art-level-extender/releases
 
-### **Install Instructions:**
-Kit character made by **HerrDekay**.
-Kit's base sprites and portrait made by **Lachsen**.
-Kit's additional animations, and spritesheet extension are drawn by **BountyXSnipe**.
-Party member functionality added by **XenonA7**.
-
-BountyXSnipe's original kit mod: https://github.com/BountyXSnipe/kitplayer
+### **Mod Credits:**
+- Kit character made by **HerrDekay**.
+- Kit's base sprites and portrait made by **Lachsen**.
+- Kit's additional animations, and spritesheet extension are drawn by **BountyXSnipe**.
+- Party member functionality added by **XenonA7**.
+- BountyXSnipe's original kit mod: https://github.com/BountyXSnipe/kitplayer
 
 ### **Install Instructions:**
 Install from the in-game mod browser.
 
-### **Dependency mods:**
+### **Dependency Mods:**
 >**Note:** This list is just for reference. You don't need to manually install these! The mod manager will automatically handle that.
 1. **extendable-severed-heads:** https://github.com/CCDirectLink/extendable-severed-heads
