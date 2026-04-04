@@ -1,3 +1,6 @@
+## 1.1.1 (04/04/2026)
+- Re-upload to fix github release issue
+
 ## 1.1.0 (04/04/2026)
 - New dependency mod: https://github.com/CCDirectLink/cc-menu-ui-replacement
 - Added new menu sprite assets from BountyXSnipe: \assets\media\gui\menu-kit.png
