@@ -1,0 +1,48 @@
+[
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "content": {
+      "DOCTYPE": "MENU_GUI_CONFIG",
+      "name": "Kit",
+      "gfx": "media/gui/menu-kit.png",
+      "Large": {
+        "gfxOffX": 0,
+        "gfxOffY": -12,
+        "offX": 0,
+        "offY": 0,
+        "sizeX": 135,
+        "sizeY": 340
+      },
+      "Small": {
+        "gfxOffX": 2,
+        "gfxOffY": -6,
+        "offX": 144,
+        "offY": 0,
+        "sizeX": 96,
+        "sizeY": 235
+      },
+      "Head": {
+        "gfxOffX": 0,
+        "gfxOffY": 0,
+        "offX": 144,
+        "offY": 256,
+        "sizeX": 126,
+        "sizeY": 35
+      },
+      "AreaButton": {
+        "gfxOffX": 0,
+        "gfxOffY": 0,
+        "offX": 144,
+        "offY": 304,
+        "sizeX": 16,
+        "sizeY": 11
+      },
+      "MapFloorButtonContainer": {
+        "offX": 144,
+        "offY": 320,
+        "sizeX": 34,
+        "sizeY": 20
+      }
+    }
+  }
+]
