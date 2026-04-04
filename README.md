@@ -23,3 +23,4 @@ Install from the in-game mod browser.
 ### **Dependency Mods:**
 >**Note:** This list is just for reference. You don't need to manually install these! The mod manager will automatically handle that.
 1. **extendable-severed-heads:** https://github.com/CCDirectLink/extendable-severed-heads
+2. **menu-ui-replacer:** https://github.com/CCDirectLink/cc-menu-ui-replacement
