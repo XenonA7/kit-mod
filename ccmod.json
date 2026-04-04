@@ -27,6 +27,7 @@
 	"authors": ["BountyXSnipe", "dmitmel", "XenonA7"],
 	"prestart": "prestart.js",
 	"dependencies": {
-		"extendable-severed-heads": ">=1.1.0"
+		"extendable-severed-heads": ">=1.1.0",
+		"menu-ui-replacer": ">=1.0.5"
 	}
 }
