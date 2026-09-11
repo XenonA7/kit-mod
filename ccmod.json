@@ -1,6 +1,6 @@
 {
 	"id": "kit-mod",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"title": {
 		"en_US": "Kit Mod",
 		"de_DE": "Kit Mod",
@@ -28,6 +28,6 @@
 	"prestart": "prestart.js",
 	"dependencies": {
 		"extendable-severed-heads": ">=1.1.0",
-		"menu-ui-replacer": ">=1.0.5"
+		"menu-ui-replacer": ">=1.1.0"
 	}
 }

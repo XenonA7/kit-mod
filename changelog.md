@@ -1,3 +1,7 @@
+## 1.1.2 (#09/10/2026)
+- Now requires menu-ui-replacer 1.1.0 or higher
+- Implemented TinyHead menu sprite (for Multibakery)
+
 ## 1.1.1 (04/04/2026)
 - Re-upload to fix github release issue
 

@@ -42,6 +42,12 @@
         "offY": 320,
         "sizeX": 34,
         "sizeY": 20
+      },
+      "TinyHead": {
+        "offX": 176,
+        "offY": 304,
+        "sizeX": 10,
+        "sizeY": 9
       }
     }
   }
